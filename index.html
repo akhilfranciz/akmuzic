@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Akhil</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="text-center">
+  <h1>Music Playlist</h1>
+  <p>Enjoy!!</p> 
+</div>
+<div class="container">
+  <div class="row" id="demo">
+   
+  </div>
+</div>
+<script>
+  var songs =[
+  {
+      name:'Oh Super Nova',
+      path:'https://s6.gmpdn.com/get/2911254/6wOeRPWYoPuDJdkpg6a7sb29YxN768UnGeY9mpmYFxb2/mp3'
+  },
+  {
+      name:'Rathipushpam',
+      path:'https://s10.gmpdn.com/get/6486679/V7ep64wQb4T5ak2q9NzYfaob5K4O62cYamL0rerkfYA5/mp3'
+  },
+  {
+      name:'Be Notorious',
+      path:'https://s9.gmpdn.com/get/9867995/bEQR6Kko8Kh47Wza18q9fjPnbmNxqVI8xoVPQrQ5H1mb/mp3'
+  },
+  {
+      name:'Adiye Kolluthe',
+      path:'https://s2.gmpdn.com/get/10018214/7LjRoPg8DPI126gOaLAGIkKwDPl97EIRg1ZGq2qjsPg2/mp3'
+  },
+  {
+      name:'Nenjukkulle',
+      path:'https://s1.gmpdn.com/get/1099659/PXnKNlJL8li9gej7R6mGuxNKkZPRw5feJokQb0bAtrm8/mp3'
+  },
+  {
+      name:'Minnalai Pidithu',
+      path:'https://s3.gmpdn.com/get/808778/R41x2L8rELi5W2k9PR6Ef5JWA9dN8nCw0E5gNbNeHMdW/mp3'
+  },
+  {
+      name:'Melliname',
+      path:'https://s5.gmpdn.com/get/868202/Ll9aPYQzpYsZeONolmD5iD4ardqRpJfgEqd9RbRLcXnK/mp3'
+  },
+  {
+      name:'Ennavale Adi',
+      path:'https://s1.gmpdn.com/get/1580147/1Ya9DPLMAPSokwVGNbLYijKda0gzpEIYpK8bP2PpipVK/mp3'
+  },
+  {
+      name:'Mundhinam',
+      path:'https://gmpdn.com/get/773074/9XKO0P7RmPiLX0YWMZOkF8jwGRrEmafaxVwL0X0xUKjQ/mp3'
+  },
+  {
+      name:'Hosanna',
+      path:'https://s1.gmpdn.com/get/763555/0Jeb1PwxDPtDwJ92db5Ls1XzkreAb9Tq4Q20d8d4tg8A/mp3'
+  },
+  {
+      name:'Life of Ram',
+      path:'https://s3.gmpdn.com/get/1199527/R41x2L8rELi5W2k9PR6Ef5JWA9dN8nCw0E5gNVAouMdW/mp3'
+  },
+  {
+      name:'7UP Madras Gig',
+      path:'https://s2.gmpdn.com/get/1480503/Ll9aPYQzpYsZeONolmD5iD4ardqRpJfgEqd9RQeWCKdl/mp3'
+  },
+  {
+      name:'Inkem Inkem',
+      path:'https://s2.gmpdn.com/get/8038876/YMoEVKXQ4KC9Rwq0AoK8uMz4QneEXkUm6gRq4DEzi6ba/mp3'
+  },
+  {
+      name:'Yenti Yenti',
+      path:'https://s9.gmpdn.com/get/9987106/28RWMPb5DPuoNr2dP4x1imZMgxlzwoi1zpZ8AjVMsngV/mp3'
+  },
+  {
+      name:'Premam Malare',
+      path:'https://s1.gmpdn.com/get/1228334/9XKO0P7RmPiLX0YWMZOkF8jwGRrEmafaxVwL0DQKUKjD/mp3'
+  },
+  {
+      name:'Mehabooba',
+      path:'https://s10.gmpdn.com/get/11617902/re94jQ7MJQcYANMmKV8WsnNJzK0jYOfzNdYVDKaPSRon/mp3'
+  },
+  {
+      name:'Kudukk',
+      path:'https://s1.gmpdn.com/get/872459/re94jQ7MJQcYANMmKV8WsnNJzK0jYOfzNdYVDKaeiRoW/mp3'
+  },
+  {
+      name:'Arabic Kuthu',
+      path:'https://s3.gmpdn.com/get/9872195/NLW6KGplJGIJwOo82kgGIdpKb5eEXPugpoY1d7ddt2w0/mp3'
+  },
+  {
+      name:'Pala Palakura ',
+      path:'https://s9.gmpdn.com/get/10381437/8bZdKPnROPug0xomKkY1UgDAXQK0lYT6QXqLRZRosNR2/mp3'
+  },
+  {
+      name:'Oo Aayiye',
+      path:'https://s2.gmpdn.com/get/2070274/GJl4K6Moz6t4nr2lkR7afm5Q1wApjoi854OmjVjRcWJQ/mp3'
+  },
+  {
+      name:'Yathe Yathe',
+      path:'https://s2.gmpdn.com/get/2601409/XDR86Kbx9Kua7jqgpR8wiObARVrwoasjwrepnDnLIPoe/mp3'
+  },
+  {
+      name:'Onakka Munthiri',
+      path:'https://s1.gmpdn.com/get/842683/qmzXjanlkasd8m4KOYeXTqbXJ69PAOIm4Q7lJZJ5T86p/mp3'
+  },
+  ]
+  var x ="", i;
+for (i=0; i<songs.length; i++) {
+x = x + `<div class="col-sm-12">
+    <h3>${songs[i].name}</h3>
+    <div class="audio-div">
+      <audio controls>
+          <source src=${songs[i].path} type="audio/mpeg">
+        </audio>
+    </div>
+  </div>`
+}
+document.getElementById("demo").innerHTML = x;
+</script>
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #2a2727;
+    color: #f5f5f5;
+}
+audio{
+    width:100%
+}
+</style>
+</body>
+</html>
